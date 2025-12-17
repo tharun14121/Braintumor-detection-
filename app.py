@@ -21,20 +21,18 @@ st.write("Upload an MRI image to detect the presence of a brain tumor.")
 # ======================================
 # Google Drive Model Download
 # ======================================
-MODEL_URL = "https://drive.google.com/file/d/1ZfRZCBtd5QoNTV_qtbhKwaAwSSW9vyiC/view"
-MODEL_PATH = "brain_tumor_model.keras"
+MODEL_URL = "https://drive.google.com/uc?id=1GbedAJ7ANrPkpDWaJlJqdV_UccQfp1p0"
+MODEL_PATH = "brain_tumor_model_deploy.keras"
 
+# Remove corrupted / partial file if it exists
 if os.path.exists(MODEL_PATH) and os.path.getsize(MODEL_PATH) < 10_000_000:
     os.remove(MODEL_PATH)
 
+# Download model
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model... Please wait ⏳"):
-        gdown.download(
-            MODEL_URL,
-            MODEL_PATH,
-            quiet=False,
-            fuzzy=True
-        )
+        gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+
 
 
 
