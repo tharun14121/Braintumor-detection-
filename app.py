@@ -21,12 +21,18 @@ st.write("Upload an MRI image to detect the presence of a brain tumor.")
 # ======================================
 # Google Drive Model Download
 # ======================================
-MODEL_URL = "https://drive.google.com/file/d/1MTETSfmvMlTgX55iT7kGbOFBU2rF9B3R"
+MODEL_URL = "https://drive.google.com/file/d/1MTETSfmvMlTgX55iT7kGbOFBU2rF9B3R/view"
 MODEL_PATH = "brain_tumor_model.keras"
 
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model... Please wait ⏳"):
-        gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+        gdown.download(
+            MODEL_URL,
+            MODEL_PATH,
+            quiet=False,
+            fuzzy=True
+        )
+
 
 # ======================================
 # Load Model (Inference only)
