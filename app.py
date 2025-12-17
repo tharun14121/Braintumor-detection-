@@ -15,21 +15,21 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🧠 Brain Tumor Detection from MRI")
+st.title(" Brain Tumor Detection from MRI")
 st.write("Upload an MRI image to detect the presence of a brain tumor.")
 
 # ======================================
-# Download Model from Google Drive
+# Google Drive Model Download
 # ======================================
-MODEL_URL = "https://drive.google.com/uc?id=1hi4Hw8avWWE0xE4U99w8-zXTxs3Ip4uo"
-MODEL_PATH = "brain_tumor_model.h5"
+MODEL_URL = "https://drive.google.com/uc?id=1pBeUuk5-nneaTNpF5-pFRDQAXkpycb5s"
+MODEL_PATH = "brain_tumor_model.keras"
 
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model... Please wait ⏳"):
         gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
 # ======================================
-# Load Model (cached)
+# Load Model (Inference only)
 # ======================================
 @st.cache_resource
 def load_trained_model():
@@ -81,5 +81,5 @@ if uploaded_file is not None:
             )
         else:
             st.error(
-                f"Tumor Detected: **{label.upper()}**\n\nConfidence: {confidence * 100:.2f}%"
+                f" Tumor Detected: **{label.upper()}**\n\nConfidence: {confidence * 100:.2f}%"
             )
