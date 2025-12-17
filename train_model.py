@@ -246,5 +246,3 @@ def detect_tumor(img_path, model, image_size=224):
 sample_image = os.path.join(test_dir, "glioma", "Te-gl_0028.jpg")
 print("\nTesting on one MRI image...")
 detect_tumor(sample_image, model)
-# Save trained model AFTER training
-model.save("brain_tumor_model.h5")
