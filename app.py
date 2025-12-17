@@ -21,7 +21,7 @@ st.write("Upload an MRI image to detect the presence of a brain tumor.")
 # ======================================
 # Google Drive Model Download
 # ======================================
-MODEL_URL = "https://drive.google.com/uc?id=1GbedAJ7ANrPkpDWaJlJqdV_UccQfp1p0"
+MODEL_URL = "https://drive.google.com/file/d/10gibKS6bEC5xIG6CquvuP_9vhk2dsp4p"
 MODEL_PATH = "brain_tumor_model_deploy.keras"
 
 # Remove corrupted / partial file if it exists
